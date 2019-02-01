@@ -49,13 +49,15 @@ public class Calculator {
         double[] xStop = new double[]{0, 0, 0, 0};
         integrator.addStepHandler(integratorPath);
         integrator.integrate(ourIntegrator, tp, xStart, tk, xStop);
-
         arrayLists.add(integratorPath.gettValues());
         arrayLists.add(integratorPath.getuValues());
         arrayLists.add(integratorPath.getmValues());
         arrayLists.add(integratorPath.getnValues());
         arrayLists.add(integratorPath.gethValues());
         arrayLists.add(ourIntegrator.getCurrentValues());
+        arrayLists.add(ourIntegrator.getiNaValues());
+        arrayLists.add(ourIntegrator.getiKValues());
+        arrayLists.add(ourIntegrator.getiLValues());
         return arrayLists;
     }
 }
