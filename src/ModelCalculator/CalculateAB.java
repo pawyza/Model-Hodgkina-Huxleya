@@ -18,7 +18,7 @@ public class CalculateAB {
         return (0.01*(10-u))/(Math.exp((10-u)/10)-1);
     }
     public double getAh(){
-        return (0.07*Math.exp((-u)/80));
+        return (0.07*Math.exp((-u)/20));
     }
     public double getBm(){
         return (4*(Math.exp((-u)/18)));

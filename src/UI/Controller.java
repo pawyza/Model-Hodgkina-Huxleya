@@ -22,7 +22,7 @@ public class Controller {
 
     @FXML
     void Calculate(ActionEvent event) {
-        Calculator calculator = new Calculator(0.01,0,10,0,1,115,-12,10.6,120.0,36.0,0.3,0.5);
+        Calculator calculator = new Calculator(0.01,0,10,0,1,115,-12,10.6,120.0,36.0,0.3,0.05);
         ArrayList<ArrayList<Double>> lists = calculator.calculate();
 
         for (int i = 0; i < lists.get(0).size();i++) {
