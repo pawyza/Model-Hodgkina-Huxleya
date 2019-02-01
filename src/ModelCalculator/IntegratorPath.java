@@ -1,7 +1,5 @@
 package ModelCalculator;
 
-// ważne metody EventOccurred ; ResetState z EventHandler
-
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import org.apache.commons.math3.exception.MaxCountExceededException;
@@ -17,7 +15,6 @@ public class IntegratorPath implements StepHandler, EventHandler {
     private final ArrayList<Double> mValues = new ArrayList<>();
     private final ArrayList<Double> nValues = new ArrayList<>();
     private final ArrayList<Double> hValues = new ArrayList<>();
-    private final ArrayList<Double> currentValues = new ArrayList<>();
 
     public ArrayList<Double> gettValues() {
         return tValues;
@@ -37,10 +34,6 @@ public class IntegratorPath implements StepHandler, EventHandler {
 
     public ArrayList<Double> gethValues() {
         return hValues;
-    }
-
-    public ArrayList<Double> getCurrentValues() {
-        return currentValues;
     }
 
     @Override

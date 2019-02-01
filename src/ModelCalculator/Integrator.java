@@ -65,15 +65,15 @@ public class Integrator implements FirstOrderDifferentialEquations {
         if(t > jump) state = 1;
 
         double iNa = gNa*Math.pow(x[1],3)*x[3]*(x[0]-eNa);
-        double iK = gK*Math.pow(x[0],4)*(x[0]-eK);
+        double iK = gK*Math.pow(x[2],4)*(x[0]-eK);
         double iL = gL*(x[0]-eL);
 
 
         double Ik = iNa + iK + iL;
         dxdt[0] = (-Ik + (current * state))/c; // u
         dxdt[1] = calculateAB.getAm() * (1 - x[1]) - calculateAB.getBm()*x[1]; //m
-        dxdt[2] = calculateAB.getAn() * (1 - x[2]) - calculateAB.getBn()*x[2]; //m
-        dxdt[3] = calculateAB.getAh() * (1 - x[3]) - calculateAB.getBh()*x[3]; //m
+        dxdt[2] = calculateAB.getAn() * (1 - x[2]) - calculateAB.getBn()*x[2]; //n
+        dxdt[3] = calculateAB.getAh() * (1 - x[3]) - calculateAB.getBh()*x[3]; //h
         currentValues.add(current*state);
         iNaValues.add(iNa);
         iKValues.add(iK);
