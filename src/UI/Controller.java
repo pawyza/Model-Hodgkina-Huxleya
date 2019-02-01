@@ -22,7 +22,7 @@ public class Controller {
 
     @FXML
     void Calculate(ActionEvent event) {
-        Calculator calculator = new Calculator(0.01,0,10,0,1,115,-12,10.6,120.0,36.0,0.3,0.05);
+        Calculator calculator = new Calculator(0.01,0,10,0,1,115,-12,10.6,120.0,36.0,0.3,0.5);
         ArrayList<ArrayList<Double>> lists = calculator.calculate();
 
         for (int i = 0; i < lists.get(0).size();i++) {
@@ -32,6 +32,7 @@ public class Controller {
 
        ChartGenerator chartGenerator = new ChartGenerator();
        chartGenerator.generateUandIChart(UandIchart,lists.get(0),lists.get(1),lists.get(5),lists.get(6),lists.get(7),lists.get(8));
+       chartGenerator.generateChannelsChart(channelsChart,lists.get(0),lists.get(2),lists.get(3),lists.get(4));
 
     }
 
