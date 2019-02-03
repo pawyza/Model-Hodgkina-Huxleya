@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class GatingPlotter {
     private ArrayList<ArrayList<Double>> list = new ArrayList<>();
-    private ArrayList<Double> u = new ArrayList<>();
-    private ArrayList<Double> m0 = new ArrayList<>();
-    private ArrayList<Double> n0 = new ArrayList<>();
-    private ArrayList<Double> h0 = new ArrayList<>();
     private double u0 = -50;
 
     public GatingPlotter() {
+        ArrayList<Double> u = new ArrayList<>();
         list.add(u);
+        ArrayList<Double> m0 = new ArrayList<>();
         list.add(m0);
+        ArrayList<Double> n0 = new ArrayList<>();
         list.add(n0);
+        ArrayList<Double> h0 = new ArrayList<>();
         list.add(h0);
         getGatingPlotterData();
     }

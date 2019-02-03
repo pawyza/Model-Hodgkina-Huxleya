@@ -4,6 +4,9 @@
     -fx-focus-color: transparent;
     -fx-faint-focus-color: transparent;
     -fx-text-fill: white;
+
+}
+.tap-pane{    -fx-text-fill: white;
 }
 
 .button {
@@ -18,7 +21,8 @@
 
 
 .tab-pane *.tab-header-background {
-    -fx-background-color: #383838
+    -fx-background-color: #383838;
+    -fx-text-fill: white;
 }
 
 .tab .tab-label {

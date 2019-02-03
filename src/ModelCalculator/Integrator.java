@@ -19,18 +19,16 @@ public class Integrator implements FirstOrderDifferentialEquations {
     private double jump;
     private int state = 0;
 
-    private CalculateAB calculateAB = new CalculateAB(0);;
+    private CalculateAB calculateAB = new CalculateAB(0);
 
     private ArrayList<Double> currentValues = new ArrayList<>();
     private ArrayList<Double> iNaValues = new ArrayList<>();
     private ArrayList<Double> iKValues = new ArrayList<>();
     private ArrayList<Double> iLValues = new ArrayList<>();
 
-
     public ArrayList<Double> getCurrentValues() {
         return currentValues;
     }
-
     public ArrayList<Double> getiNaValues() {
         return iNaValues;
     }

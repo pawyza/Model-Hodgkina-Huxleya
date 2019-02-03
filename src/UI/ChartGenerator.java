@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class ChartGenerator {
 
-    public void generateUandIChart(LineChart chart, ArrayList<Double> timeArray , ArrayList<Double> uArray, ArrayList<Double> iArray,
+    public void generateUandIChart(LineChart chart, ArrayList<Double> timeArray, ArrayList<Double> uArray, ArrayList<Double> iArray,
                                       ArrayList<Double> iNaArray, ArrayList<Double> iKArray, ArrayList<Double> iLArray){
         chart.getData().clear();
         chart.setCreateSymbols(false);
@@ -53,7 +53,6 @@ public class ChartGenerator {
 
 
     public void generateGatingChart(LineChart chart, ArrayList<ArrayList<Double>> list){
-        Axis<Number> yAxis;
         chart.getData().clear();
         chart.setCreateSymbols(false);
         chart.getYAxis().setAutoRanging(false);
@@ -78,7 +77,16 @@ public class ChartGenerator {
 
         chart.getData().addAll(m,n,h);
     }
-
+    public void generateCurrentChart(LineChart chart,ArrayList<Double> timeArray,ArrayList<Double> uArray){
+        chart.getData().clear();
+        chart.setCreateSymbols(false);
+        XYChart.Series u = new XYChart.Series();
+        u.setName("Voltage U");
+        for (int index =0;index<timeArray.size();index=index+10){
+            u.getData().add(new XYChart.Data<>(timeArray.get(index),uArray.get(index)));
+        }
+        chart.getData().addAll(u);
+    }
 
     }
 
