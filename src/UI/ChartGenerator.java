@@ -1,5 +1,6 @@
 package UI;
 
+import javafx.scene.chart.Axis;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
 
@@ -41,6 +42,7 @@ public class ChartGenerator {
         XYChart.Series h = new XYChart.Series();
         h.setName("H");
 
+
         for (int index =0;index<timeArray.size();index++){
             m.getData().add(new XYChart.Data<>(timeArray.get(index),mArray.get(index)));
             n.getData().add(new XYChart.Data<>(timeArray.get(index),nArray.get(index)));
@@ -48,4 +50,35 @@ public class ChartGenerator {
         }
         chart.getData().addAll(m,n,h);
     }
-}
+
+
+    public void generateGatingChart(LineChart chart, ArrayList<ArrayList<Double>> list){
+        Axis<Number> yAxis;
+        chart.getData().clear();
+        chart.setCreateSymbols(false);
+        chart.getYAxis().setAutoRanging(false);
+        XYChart.Series m = new XYChart.Series();
+        m.setName("M");
+        XYChart.Series n = new XYChart.Series();
+        n.setName("N");
+        XYChart.Series h = new XYChart.Series();
+        h.setName("H");
+
+        for (int i =0; i<list.get(0).size();i++) {
+            /* // do sprawdzania wartosci
+            System.out.println(list.get(0).get(i));
+            System.out.println(list.get(1).get(i));
+            System.out.println(list.get(2).get(i));
+            System.out.println(list.get(3).get(i));
+            */
+            m.getData().add(new XYChart.Data<>(list.get(0).get(i), list.get(1).get(i)));
+            n.getData().add(new XYChart.Data<>(list.get(0).get(i), list.get(2).get(i)));
+            h.getData().add(new XYChart.Data<>(list.get(0).get(i), list.get(3).get(i)));
+        }
+
+        chart.getData().addAll(m,n,h);
+    }
+
+
+    }
+
