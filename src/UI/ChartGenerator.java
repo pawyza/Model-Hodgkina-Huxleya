@@ -22,7 +22,7 @@ public class ChartGenerator {
         iK.setName("Potasium channel current IK");
         XYChart.Series iL = new XYChart.Series();
         iL.setName("(uplywu) current IL");
-        for (int index =0;index<timeArray.size();index++){
+        for (int index =0;index<timeArray.size();index=index+10){
             u.getData().add(new XYChart.Data<>(timeArray.get(index),uArray.get(index)));
             i.getData().add(new XYChart.Data<>(timeArray.get(index),iArray.get(index)));
             iNa.getData().add(new XYChart.Data<>(timeArray.get(index),iNaArray.get(index)));
@@ -43,7 +43,7 @@ public class ChartGenerator {
         h.setName("H");
 
 
-        for (int index =0;index<timeArray.size();index++){
+        for (int index =0;index<timeArray.size();index=index+10){
             m.getData().add(new XYChart.Data<>(timeArray.get(index),mArray.get(index)));
             n.getData().add(new XYChart.Data<>(timeArray.get(index),nArray.get(index)));
             h.getData().add(new XYChart.Data<>(timeArray.get(index),hArray.get(index)));
