@@ -7,6 +7,8 @@ public class Statistics {
 
     private ArrayList<Double> listX;
     private ArrayList<Double> listY;
+    ArrayList<Double> peakX;
+    ArrayList<Double> peakY;
 
     public Statistics(ArrayList<Double> listX, ArrayList<Double> listY) {
         this.listX = listX;
@@ -15,7 +17,8 @@ public class Statistics {
 
     public double getFrequency() {
 
-        ArrayList<Double> peak = new ArrayList<>();
+        peakX = new ArrayList<>();
+        peakY = new ArrayList<>();
         double speed1;
         double speed2;
         for (int i = 2; i < listY.size(); i++) {
@@ -23,7 +26,9 @@ public class Statistics {
             speed2 = (listY.get(i - 1) - listY.get(i - 2));
             if (speed1 < 0 && speed2 > 0) {
                 if (listX.get(i) > 1) { // poczatkowe wartosci zbyt male do wyznaczenia czestotliwosci
-                    peak.add(listX.get(i));
+                    System.out.println(listX.get(i));
+                    peakX.add(listX.get(i));
+                    peakY.add(listY.get(i));
                 }
 
 
@@ -31,19 +36,19 @@ public class Statistics {
         }
 
 
-        return getMean(peak);
+        return (1/getMean(peakX)) *1000;
     }
 
     public double getMaxU() {
-        return Collections.max(listY);
+        return Collections.max(peakY);
     }
 
     public double getMeanU() {
         double sum = 0;
-        for (Double aListY : listY) {
+        for (Double aListY : peakY) {
             sum += aListY;
         }
-        return (sum / listY.size());
+        return (sum / peakY.size());
     }
 
     public double getMean(ArrayList<Double> list) {
@@ -57,9 +62,9 @@ public class Statistics {
     public double getVarianceU() {
         double mean = getMeanU();
         double temp = 0;
-        for (double a : listY)
+        for (double a : peakY)
             temp += (a - mean) * (a - mean);
-        return temp / (listY.size() - 1);
+        return temp / (peakY.size() - 1);
     }
 
     public double getStdDev() {
