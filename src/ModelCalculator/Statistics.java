@@ -10,11 +10,20 @@ public class Statistics {
     ArrayList<Double> peakX;
     ArrayList<Double> peakY;
 
+    /**
+     * Kontruktor klasy Statistics
+     * @param listX lista wartosci na osi x
+     * @param listY lista wartosci na osi y
+     */
     public Statistics(ArrayList<Double> listX, ArrayList<Double> listY) {
         this.listX = listX;
         this.listY = listY;
     }
 
+    /**
+     * Metoda wyznaczajaca czestotliwosc
+     * @return czestotliwosc
+     */
     public double getFrequency() {
 
         peakX = new ArrayList<>();
@@ -39,10 +48,16 @@ public class Statistics {
         return (1/getMean(peakX)) *1000;
     }
 
+    /**
+     * @return Maksyalne napiecie
+     */
     public double getMaxU() {
         return Collections.max(peakY);
     }
 
+    /**
+     * @return Srednie napiecie
+     */
     public double getMeanU() {
         double sum = 0;
         for (Double aListY : peakY) {

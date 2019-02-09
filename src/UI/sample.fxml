@@ -152,7 +152,7 @@
                   </AnchorPane>
               </content>
             </Tab>
-            <Tab text="Chart current">
+            <Tab text="Chart voltage">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="275.0" prefWidth="527.0">
                      <children>

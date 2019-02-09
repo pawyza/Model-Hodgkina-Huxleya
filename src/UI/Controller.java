@@ -102,21 +102,15 @@ public class Controller implements Initializable {
     private TextField edit_current;
 
 
+    /**
+     * Metoda wywolywana po nacisnieciu przycisuku calculate
+     */
     @FXML
     void Calculate() {
         getData();
         Calculator calculator = new Calculator(step, tStart, tEnd, u0, c, eNa, eK, eL, gNa, gK, gL, current);
         ArrayList<ArrayList<Double>> lists = calculator.calculate();
 
-
-/*
-        for (int i = 0; i < lists.get(0).size();i++) {
-
-            System.out.println("t: " + lists.get(0).get(i) + " u: " + lists.get(1).get(i) + " m: " + lists.get(2).get(i) + " n: " + lists.get(3).get(i) + " h: " + lists.get(4).get(i)+ " I: " + lists.get(5).get(i)
-            + "I Na: " + lists.get(6).get(i)+ "I K: " + lists.get(7).get(i)+ "I L: " + lists.get(8).get(i));
-
-        }
-*/
         GatingPlotter gp = new GatingPlotter();
         gp.getGatingPlotterData();
         ChartGenerator chartGenerator = new ChartGenerator();
@@ -133,6 +127,9 @@ public class Controller implements Initializable {
     }
 
 
+    /**
+     * Metoda ustawiajaca wartosci poczatkowe na podstawie wpisanych do okien tekstowych
+     */
     private void getData() {
         double stepNew;
         double tStartNew;

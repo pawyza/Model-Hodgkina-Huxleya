@@ -8,6 +8,16 @@ import java.util.ArrayList;
 
 public class ChartGenerator {
 
+    /**
+     * Metoda generujaca wykres dla napiecia oraz pradow w ukladzie
+     * @param chart LineChart uzyty w fxml do wyswietlenia wynikow
+     * @param timeArray lista tablicowa punktow czasu
+     * @param uArray lista tablicowa napiec
+     * @param iArray lista tablicowa natezenia
+     * @param iNaArray lista tablicowa natezenia Na
+     * @param iKArray lista tablicowa natezenia K
+     * @param iLArray lista tablicowa natezenia L
+     */
     public void generateUandIChart(LineChart chart, ArrayList<Double> timeArray, ArrayList<Double> uArray, ArrayList<Double> iArray,
                                       ArrayList<Double> iNaArray, ArrayList<Double> iKArray, ArrayList<Double> iLArray){
         chart.getData().clear();
@@ -32,6 +42,14 @@ public class ChartGenerator {
         chart.getData().addAll(u,i,iNa,iK,iL);
     }
 
+    /**
+     * Metoda generujaca wykres dla kanalow
+     * @param chart LineChart uzyty w fxml do wyswietlenia wynikow
+     * @param timeArray lista tablicowa punktow czasu
+     * @param mArray lista tablicowa wartosci m
+     * @param nArray lista tablicowa wartosci n
+     * @param hArray lista tablicowa wartosci h
+     */
     public void generateChannelsChart(LineChart chart, ArrayList<Double> timeArray , ArrayList<Double> mArray, ArrayList<Double> nArray, ArrayList<Double> hArray){
         chart.getData().clear();
         chart.setCreateSymbols(false);
@@ -52,6 +70,11 @@ public class ChartGenerator {
     }
 
 
+    /**
+     * Metoda generujaca wykres dla kanalow w zadanym przedziale
+     * @param chart  LineChart uzyty w fxml do wyswietlenia wynikow
+     * @param list lista tablicowa list tablicowych wynikow z integratora
+     */
     public void generateGatingChart(LineChart chart, ArrayList<ArrayList<Double>> list){
         chart.getData().clear();
         chart.setCreateSymbols(false);

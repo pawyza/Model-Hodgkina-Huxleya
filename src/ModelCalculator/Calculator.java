@@ -4,6 +4,9 @@ import org.apache.commons.math3.ode.nonstiff.EulerIntegrator;
 
 import java.util.ArrayList;
 
+/**
+ * Klasa przygotowujaca pola integratora oraz obiekty, a nastepnie tworzaca obiekty tych klas ktorych zadaniem jest wyznaczenie poszukiwanych wartosci.
+ */
 public class Calculator {
     //Stale, wartosci poczatkowe, czas poczatkowy oraz koncowy, krok calkowania
     private final double step; //Krok calkowania
@@ -19,6 +22,21 @@ public class Calculator {
     private final double gL;
     private final double current;
 
+    /**
+     * Kontrukor klasy calculator
+     * @param step krok calkowania
+     * @param tp czas poczatkowy
+     * @param tk czas koncowy
+     * @param u0 napiecie poczatkowe
+     * @param c pojemnosc
+     * @param eNa parametr eNa
+     * @param eK parametr eK
+     * @param eL parametr eL
+     * @param gNa parametr gNa
+     * @param gK parametr gK
+     * @param gL parametr gl
+     * @param current prad
+     */
     //Konstruktor dostajacy te wartosci
     public Calculator(double step, double tp, double tk, double u0, double c, double eNa, double eK, double eL, double gNa, double gK, double gL, double current) {
         this.step = step;
@@ -35,6 +53,10 @@ public class Calculator {
         this.current = current;
     }
 
+    /**
+     * Tworzy obiekty integratora, ustawia ich pola.
+     * @return zwraca liste tablicowa list tablicowych wynikow calkowania
+     */
     public ArrayList<ArrayList<Double>> calculate() {
 
         ArrayList<ArrayList<Double>> arrayLists = new ArrayList<>();
