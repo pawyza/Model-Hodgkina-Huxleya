@@ -6,6 +6,9 @@ public class GatingPlotter {
     private ArrayList<ArrayList<Double>> list = new ArrayList<>();
     private double u0 = -50;
 
+    /**
+     * Konstruktor klasy do wykreślenia aktywacji bramek
+     */
     public GatingPlotter() {
         ArrayList<Double> u = new ArrayList<>();
         list.add(u);
@@ -18,6 +21,9 @@ public class GatingPlotter {
         getGatingPlotterData();
     }
 
+    /**
+     *  Metoda uzupełniająca listę warunków początkowych dla kanałów, w zależności od u.
+     */
     public void getGatingPlotterData(){
 
         for(int i = 0; i <100; i++){
@@ -32,6 +38,10 @@ public class GatingPlotter {
         }
     }
 
+    /**
+     *  Metoda zwracająca listę z parametrami do wykresu bramkowania
+     * @return lista z parametrami do wykresu bramkowania
+     */
     public ArrayList<ArrayList<Double>> getList() {
         return list;
     }

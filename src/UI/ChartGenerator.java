@@ -100,6 +100,13 @@ public class ChartGenerator {
 
         chart.getData().addAll(m,n,h);
     }
+
+    /**
+     *  Metoda wykreślająca napięcie w zależności od czasu
+     * @param chart wykres fxml do uzupełnienia
+     * @param timeArray lista wartości czasu
+     * @param uArray lista wartości napięcia
+     */
     public void generateCurrentChart(LineChart chart,ArrayList<Double> timeArray,ArrayList<Double> uArray){
         chart.getData().clear();
         chart.setCreateSymbols(false);

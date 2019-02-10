@@ -49,7 +49,7 @@ public class Statistics {
     }
 
     /**
-     * @return Maksyalne napiecie
+     * @return Maksymalne napięcie
      */
     public double getMaxU() {
         return Collections.max(peakY);
@@ -66,6 +66,12 @@ public class Statistics {
         return (sum / peakY.size());
     }
 
+    /**
+     *
+     * Metoda do obliczania średniej z listy tablicowej
+     * @param list lista tablicowa
+     * @return średnia wartość
+     */
     public double getMean(ArrayList<Double> list) {
         double sum = 0;
         for (Double aList : list) {
@@ -74,6 +80,11 @@ public class Statistics {
         return (sum / list.size());
     }
 
+    /**
+     *
+     *
+     * @return wariancja listy tablicowej
+     */
     public double getVarianceU() {
         double mean = getMeanU();
         double temp = 0;
@@ -82,6 +93,10 @@ public class Statistics {
         return temp / (peakY.size() - 1);
     }
 
+    /**
+     *
+     * @return odchylenie standardowe listy tablicowej
+     */
     public double getStdDev() {
         return Math.sqrt(getVarianceU());
     }

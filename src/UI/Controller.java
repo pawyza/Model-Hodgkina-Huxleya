@@ -103,7 +103,7 @@ public class Controller implements Initializable {
 
 
     /**
-     * Metoda wywolywana po nacisnieciu przycisuku calculate
+     * Metoda wywolywana po nacisnieciu przycisku calculate
      */
     @FXML
     void Calculate() {
